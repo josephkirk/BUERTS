@@ -1,0 +1,23 @@
+[server]
+host = "127.0.0.1"
+port = 8080
+tick_rate = 60
+
+[game]
+max_players = 8
+min_players = 2
+match_timeout = 600  # 10 minutes in seconds
+
+[webrtc]
+stun_servers = ["stun:stun.l.google.com:19302"]
+turn_servers = []
+max_bandwidth = 1048576  # 1MB/s
+enable_unreliable = true
+
+[resources]
+start_resources = 1000
+resource_types = ["gold", "wood", "stone"]
+
+[matchmaking]
+rating_range = 200
+max_wait_time = 300  # 5 minutes in seconds

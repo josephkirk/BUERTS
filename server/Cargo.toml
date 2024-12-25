@@ -1,0 +1,39 @@
+[package]
+name = "buerts-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Core
+bevy = "0.12"
+tokio = { version = "1.0", features = ["full"] }
+futures = "0.3"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# WebRTC
+webrtc = "0.9"
+datachannel = "0.9"
+
+# Networking
+tokio-tungstenite = "0.20"
+async-tungstenite = "0.24"
+
+# Utilities
+uuid = { version = "1.6", features = ["v4", "serde"] }
+log = "0.4"
+env_logger = "0.10"
+anyhow = "1.0"
+thiserror = "1.0"
+dashmap = "5.5"
+
+[dev-dependencies]
+mockall = "0.12"
+tokio-test = "0.4"
+
+[features]
+default = []
+test_utils = []
