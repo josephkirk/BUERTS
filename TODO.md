@@ -1,193 +1,165 @@
-# TODO List for BUERTS
+# BUERTS TODO List
 
-## Critical Path (WebRTC Implementation)
+## Sprint 1: Core Infrastructure (Current)
 
-### Signaling Server (Bevy)
-- [ ] Implement WebSocket signaling server
-- [ ] Handle client connection management
-- [ ] Process and relay ICE candidates
-- [ ] Handle SDP offer/answer exchange
-- [ ] Implement room/session management
-- [ ] Add connection state monitoring
-- [ ] Implement reconnection handling
+### WebRTC Implementation
+- [ ] Setup WebRTC data channels
+- [ ] Implement connection management
+  - [ ] Initial handshake
+  - [ ] Connection state handling
+  - [ ] Reconnection logic
+  - [ ] Error recovery
+- [ ] Setup STUN/TURN configuration
+- [ ] Add connection quality monitoring
 
-### WebRTC Plugin (Unreal)
-- [ ] Complete WebRTC connection manager
-- [ ] Implement reliable data channel for critical game data
-- [ ] Add unreliable data channel for position updates
-- [ ] Implement connection state management
-- [ ] Add reconnection logic
-- [ ] Create Blueprint interface for WebRTC functions
-- [ ] Add STUN/TURN server configuration
-- [ ] Implement ICE candidate gathering
-- [ ] Add bandwidth monitoring
-- [ ] Create connection quality indicators
-- [ ] Implement message queuing system
-- [ ] Add compression for data channels
-- [ ] Create connection diagnostics tools
+### State Synchronization
+- [ ] Basic entity replication
+  - [ ] Position updates
+  - [ ] State changes
+  - [ ] Ownership management
+- [ ] Delta compression
+- [ ] State reconciliation
+- [ ] Client prediction
 
-### Network Protocol
-- [ ] Define message formats for all game events
-- [ ] Implement message serialization/deserialization
-- [ ] Add protocol versioning
-- [ ] Create message validation system
-- [ ] Implement message priority system
-- [ ] Add bandwidth optimization
-- [ ] Create network statistics gathering
+### Server Core
+- [ ] Session management
+  - [ ] Player join/leave handling
+  - [ ] Game session creation
+  - [ ] Match setup
+- [ ] Game state management
+  - [ ] Tick system
+  - [ ] State validation
+  - [ ] Command processing
 
-### Plugin Integration
-- [ ] Integrate with Unreal's networking subsystem
-- [ ] Add plugin configuration interface
-- [ ] Create debug visualization tools
-- [ ] Add network simulation tools
-- [ ] Implement plugin settings management
-- [ ] Create plugin documentation
-- [ ] Add example implementations
+### Client Plugin
+- [ ] Complete plugin structure
+  - [ ] Network subsystem
+  - [ ] Message handling
+  - [ ] State management
+- [ ] Implement message queuing
+- [ ] Add Blueprint interface
 
-## Core Systems Implementation
+## Sprint 2: Game Systems
 
-### Server Architecture
-- [ ] Set up ECS structure
-- [ ] Implement physics system
-- [ ] Create game state manager
-- [ ] Add player management system
-- [ ] Implement command validation
-- [ ] Create replay system
-- [ ] Add server-side prediction
+### Core Gameplay
+- [ ] Unit movement system
+  - [ ] Pathfinding
+  - [ ] Collision handling
+  - [ ] Formation movement
+- [ ] Combat system
+  - [ ] Attack logic
+  - [ ] Damage calculation
+  - [ ] Range checking
+- [ ] Resource system
+  - [ ] Resource gathering
+  - [ ] Resource management
+  - [ ] Economy balance
 
-### Client Systems
-- [ ] Create unit selection system
-- [ ] Implement camera manager
-- [ ] Add input handling system
-- [ ] Create UI framework
-- [ ] Implement resource system
-- [ ] Add pathfinding
-- [ ] Create combat system
+### State Management
+- [ ] Improve synchronization
+  - [ ] Optimized deltas
+  - [ ] Priority system
+  - [ ] Bandwidth management
+- [ ] Add state interpolation
+- [ ] Implement rollback system
 
-## Performance Optimization
+### Performance
+- [ ] Network optimization
+  - [ ] Message batching
+  - [ ] Compression improvements
+  - [ ] Bandwidth adaptation
+- [ ] Server optimization
+  - [ ] Entity system performance
+  - [ ] Physics optimization
+  - [ ] State update optimization
+- [ ] Client optimization
+  - [ ] Render efficiency
+  - [ ] Memory management
+  - [ ] Asset loading
 
-### Network Optimization
-- [ ] Implement delta compression
-- [ ] Add message batching
-- [ ] Create bandwidth adaptation
-- [ ] Optimize state synchronization
-- [ ] Add network LOD system
-- [ ] Implement interest management
-- [ ] Create efficient serialization
+## Sprint 3: Advanced Features
 
-### Client Performance
-- [ ] Add LOD system
-- [ ] Implement occlusion culling
-- [ ] Optimize rendering pipeline
-- [ ] Add memory management
-- [ ] Create asset streaming system
-- [ ] Implement GPU optimizations
-- [ ] Add performance profiling tools
+### Game Features
+- [ ] AI System
+  - [ ] Basic AI behaviors
+  - [ ] Pathfinding
+  - [ ] Decision making
+- [ ] Terrain System
+  - [ ] Terrain modification
+  - [ ] Influence on gameplay
+- [ ] Building System
+  - [ ] Construction mechanics
+  - [ ] Base building
+  - [ ] Tech tree
 
-## Testing Framework
+### Multiplayer Features
+- [ ] Matchmaking system
+  - [ ] Player ranking
+  - [ ] Match balancing
+  - [ ] Session management
+- [ ] Spectator support
+- [ ] Replay system
 
-### Network Testing
-- [ ] Create automated connection tests
-- [ ] Add latency simulation
-- [ ] Implement packet loss testing
-- [ ] Create bandwidth limitation tests
-- [ ] Add stress testing system
-- [ ] Implement security testing
-- [ ] Create performance benchmarks
+### Tools & Debugging
+- [ ] Network debugger
+  - [ ] Connection visualization
+  - [ ] State tracking
+  - [ ] Performance metrics
+- [ ] Game state inspector
+- [ ] Replay analyzer
 
-### Game Testing
-- [ ] Add unit tests for game logic
-- [ ] Create integration tests
-- [ ] Implement automated gameplay tests
-- [ ] Add performance testing
-- [ ] Create load testing system
-- [ ] Implement crash reporting
-- [ ] Add analytics system
+## Sprint 4: Polish & Release
 
-## Quality of Life Features
+### Quality Assurance
+- [ ] Automated testing
+  - [ ] Unit tests
+  - [ ] Integration tests
+  - [ ] Performance tests
+- [ ] Network stress testing
+- [ ] Cross-platform testing
 
-### Developer Tools
-- [ ] Create network debugging interface
-- [ ] Add in-game console
-- [ ] Implement logging system
-- [ ] Create profiling tools
-- [ ] Add crash reporting
-- [ ] Implement hot-reloading
-- [ ] Create build automation
+### Documentation
+- [ ] API documentation
+- [ ] Integration guide
+- [ ] Network protocol spec
+- [ ] User manual
 
-### User Features
-- [ ] Add matchmaking system
-- [ ] Implement friend system
-- [ ] Create lobby system
-- [ ] Add chat functionality
-- [ ] Implement player profiles
-- [ ] Add achievements
-- [ ] Create replay viewer
-
-## Documentation
-
-### Technical Documentation
-- [ ] Create API documentation
-- [ ] Write setup guide
-- [ ] Add network protocol specification
-- [ ] Create deployment guide
-- [ ] Write troubleshooting guide
-- [ ] Add performance tuning guide
-- [ ] Create security guidelines
-
-### User Documentation
-- [ ] Write user manual
-- [ ] Create quick start guide
-- [ ] Add tutorial system
-- [ ] Write FAQ
-- [ ] Create wiki
-- [ ] Add video tutorials
-- [ ] Write modding guide
+### Deployment
+- [ ] Build automation
+- [ ] Deployment scripts
+- [ ] Server infrastructure
+- [ ] Monitoring setup
 
 ## Future Considerations
 
-### Scaling
-- [ ] Plan for multiple game modes
-- [ ] Consider tournament support
-- [ ] Plan for spectator mode
-- [ ] Consider replay distribution
-- [ ] Plan for modding support
-- [ ] Consider cross-platform support
-- [ ] Plan for cloud deployment
+### Scalability
+- [ ] Multiple game modes
+- [ ] Tournament support
+- [ ] Server clustering
+- [ ] Cloud deployment
 
-### Security
-- [ ] Implement anti-cheat
-- [ ] Add DDoS protection
-- [ ] Create secure authentication
-- [ ] Implement encryption
-- [ ] Add exploit prevention
-- [ ] Create security monitoring
-- [ ] Implement reporting system
+### Content
+- [ ] Additional units
+- [ ] New game modes
+- [ ] Map editor
+- [ ] Mod support
 
-## Project Management
+### Community
+- [ ] Plugin marketplace
+- [ ] Community tools
+- [ ] Documentation portal
+- [ ] Example projects
+
+## Technical Debt
+
+### Code Quality
+- [ ] Code review backlog
+- [ ] Performance profiling
+- [ ] Memory leak checks
+- [ ] API consistency
 
 ### Infrastructure
-- [ ] Set up CI/CD pipeline
-- [ ] Create deployment scripts
-- [ ] Add monitoring system
-- [ ] Implement backup system
-- [ ] Create development environments
-- [ ] Add version control workflow
-- [ ] Set up issue tracking
-
-### Release Management
-- [ ] Create versioning system
-- [ ] Add update mechanism
-- [ ] Implement rollback system
-- [ ] Create release notes
-- [ ] Add changelog generation
-- [ ] Implement beta testing
-- [ ] Create distribution system
-
-Notes:
-- Focus on WebRTC implementation first
-- Maintain parallel development of server and client
-- Regular testing throughout development
-- Document as you go
-- Consider scalability in initial design
-- Security should be built-in from start
+- [ ] CI/CD improvements
+- [ ] Test coverage
+- [ ] Documentation updates
+- [ ] Dependency updates
